@@ -7,10 +7,14 @@ import os
 # -------------------------------
 # Page config
 # -------------------------------
-st.set_page_config(page_title="Bengaluru House Price Predictor", layout="centered")
+st.set_page_config(
+    page_title="Bengaluru House Price Predictor",
+    page_icon="🏠",
+    layout="centered"
+)
 
 # -------------------------------
-# Background styling
+# Background + Styling
 # -------------------------------
 st.markdown(
     """
@@ -20,19 +24,22 @@ st.markdown(
             rgba(0,0,0,0.55),
             rgba(0,0,0,0.55)
         ),
-        url("https://images.pexels.com/photos/4119830/pexels-photo-4119830.jpeg");
+        url(""https://images.pexels.com/photos/4119830/pexels-photo-4119830.jpeg?_gl=1*1nuo4qg*_ga*MTU5Mjk0MjQwLjE3NjkwOTA1NTE.*_ga_8JE65Q40S6*czE3NjkwOTQ1MzkkbzIkZzEkdDE3NjkwOTQ5NjQkajU5JGwwJGgw);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
-    h1, label {
+
+    h1, h2, h3, label {
         color: white !important;
     }
+
     .stButton>button {
         background-color: #ff4b4b;
         color: white;
         border-radius: 8px;
         font-size: 16px;
+        padding: 0.5em 1.2em;
     }
     </style>
     """,
@@ -40,30 +47,31 @@ st.markdown(
 )
 
 # -------------------------------
-# Load model & columns safely
+# Load model safely (Cloud-safe)
 # -------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-model = pickle.load(
-    open(os.path.join(BASE_DIR, "model/house_price_model.pkl"), "rb")
-)
+model_path = os.path.join(BASE_DIR, "model", "house_price_model.pkl")
+columns_path = os.path.join(BASE_DIR, "model", "columns.json")
 
-columns = json.load(
-    open(os.path.join(BASE_DIR, "model/columns.json"), "r")
-)
+model = pickle.load(open(model_path, "rb"))
+columns = json.load(open(columns_path, "r"))
 
 # -------------------------------
-# UI
+# App UI
 # -------------------------------
 st.title("🏠 Bengaluru House Price Predictor")
 
-exclude = ['total_sqft', 'bath', 'bhk']
-locations = sorted([c for c in columns if c not in exclude])
+st.markdown("### Enter House Details")
 
-location = st.selectbox("Location", locations)
-sqft = st.number_input("Total Sqft", min_value=300.0)
-bath = st.number_input("Bathrooms", min_value=1, step=1)
-bhk = st.number_input("BHK", min_value=1, step=1)
+# Input fields
+exclude_cols = ['total_sqft', 'bath', 'bhk']
+locations = sorted([c for c in columns if c not in exclude_cols])
+
+location = st.selectbox("📍 Location", locations)
+sqft = st.number_input("📐 Total Square Feet", min_value=300.0, step=50.0)
+bath = st.number_input("🛁 Bathrooms", min_value=1, step=1)
+bhk = st.number_input("🛏️ BHK", min_value=1, step=1)
 
 # -------------------------------
 # Prediction
@@ -81,7 +89,10 @@ if st.button("Predict Price"):
 
         price = model.predict([x])[0]
 
-        st.success(f"Estimated Price: ₹ {round(price, 2)} Lakhs")
+        st.success(f"💰 Estimated Price: ₹ {round(price, 2)} Lakhs")
 
     except Exception as e:
-        st.error(f"Prediction failed: {e}")
+        st.error("❌ Prediction failed")
+        st.code(str(e))
+
+
