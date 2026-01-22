@@ -54,12 +54,26 @@ import pickle
 import json
 import numpy as np
 
-model = pickle.load(open("model/house_price_model.pkl", "rb"))
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = pickle.load(
+    open(os.path.join(BASE_DIR, "model/house_price_model.pkl"), "rb")
+)
+
+columns = json.load(
+    open(os.path.join(BASE_DIR, "model/columns.json"), "r")
+)
+
 columns = json.load(open("model/columns.json"))
 
 st.title("🏠 Bengaluru House Price Predictor")
 
-location = st.selectbox("Location", sorted([c for c in columns if c not in ['total_sqft','bath','bhk','price_per_sqft']]))
+# FIX-4: Correct location columns
+exclude = ['total_sqft', 'bath', 'bhk']
+locations = [c for c in columns if c not in exclude]
+
+location = st.selectbox("Location", sorted()
 sqft = st.number_input("Total Sqft")
 bath = st.number_input("Bathrooms", step=1)
 bhk = st.number_input("BHK", step=1)
@@ -73,5 +87,9 @@ if st.button("Predict Price"):
     if location in columns:
         x[columns.index(location)] = 1
 
-    price = model.predict([x])[0]
-    st.success(f"Estimated Price: ₹ {round(price,2)} Lakhs")
+    # FIX #5 goes EXACTLY here
+    try:
+        price = model.predict([x])[0]
+        st.success(f"Estimated Price: ₹ {round(price,2)} Lakhs")
+    except Exception as e:
+        st.error(f"Prediction failed: {e}")
