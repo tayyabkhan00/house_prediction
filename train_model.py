@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("/Users/tayyabkhan/python/ML_algorithm/house_prediction/data/bengaluru_house_data.csv")
+df = pd.read_csv("house_prediction/data/bengaluru_house_data.csv")
 df.head()
 
 
