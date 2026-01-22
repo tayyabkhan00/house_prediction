@@ -24,7 +24,7 @@ st.markdown(
             rgba(0,0,0,0.55),
             rgba(0,0,0,0.55)
         ),
-        url(""https://images.pexels.com/photos/4119830/pexels-photo-4119830.jpeg?_gl=1*1nuo4qg*_ga*MTU5Mjk0MjQwLjE3NjkwOTA1NTE.*_ga_8JE65Q40S6*czE3NjkwOTQ1MzkkbzIkZzEkdDE3NjkwOTQ5NjQkajU5JGwwJGgw);
+        url("https://images.pexels.com/photos/4119830/pexels-photo-4119830.jpeg?_gl=1*fc89kq*_ga*MTU5Mjk0MjQwLjE3NjkwOTA1NTE.*_ga_8JE65Q40S6*czE3NjkxMDM0ODEkbzQkZzEkdDE3NjkxMDM0OTYkajQ1JGwwJGgw");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
