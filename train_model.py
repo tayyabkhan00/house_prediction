@@ -1,6 +1,9 @@
 import pandas as pd
 
-df = pd.read_csv("/Users/tayyabkhan/python/ML_algorithm/house_prediction/data/bengaluru_house_data.csv")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "model", "house_price_model.pkl")
+columns_path = os.path.join(BASE_DIR, "model", "columns.json")
 df.head()
 
 
