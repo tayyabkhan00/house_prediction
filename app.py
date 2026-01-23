@@ -88,7 +88,7 @@ if st.button("Predict Price"):
         if location in columns:
             x[columns.index(location)] = 1
 
-        import pandas as pd
+        
         x_df = pd.DataFrame([x], columns=columns)
 
         price = model.predict(x_df)[0]
