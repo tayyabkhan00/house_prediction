@@ -79,7 +79,86 @@ house_prediction/
 ├── runtime.txt             # Python version
 └── README.md
 ```
-  
+# ⚙️ How to Run Locally
+1️⃣ Clone the repository
+git clone https://github.com/your-username/house_prediction.git
+cd house_prediction
+
+2️⃣ Create a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+
+3️⃣ Install dependencies
+pip install -r requirements.txt
+
+4️⃣ Train the model (local only)
+python train_model.py
+This generates:
+- model/house_price_model.pkl
+- model/columns.json
+
+5️⃣ Run the Streamlit app
+streamlit run app.py
+
+# ☁️ Deployment (Streamlit Cloud)
+
+- Steps followed:
+- Trained model locally
+- Pushed model artifacts (.pkl, .json) to GitHub
+- Connected repository to Streamlit Cloud
+- Used relative paths and CPU-safe configuration
+- App auto-redeploys on every GitHub push
+
+# 🛡️ Deployment & Engineering Notes
+
+✅ Uses relative paths (__file__) for portability
+✅ Model trained with CPU-safe XGBoost
+✅ XGBoost version aligned across local & cloud
+✅ Feature names preserved using columns.json
+✅ Predictions done using pandas DataFrame (feature-safe)
+❌ No training happens on the cloud (best practice)
+
+# 📦 Tech Stack
+
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- XGBoost
+- Streamlit
+- Git & GitHub
+
+# 📊 Sample Prediction
+
+Input:
+Location: Whitefield
+Total Sqft: 1200
+Bathrooms: 2
+BHK: 2
+
+Output:
+💰 Estimated Price: ₹ XX Lakhs
+
+# 🎯 Future Improvements
+
+- Add model explainability (SHAP)
+- Add price range instead of point estimate
+- Improve UI/UX
+- Add input validation and error messages
+- Integrate ML pipelines (sklearn Pipeline)
+
+# 🙌 Acknowledgements
+
+- Dataset inspired by public Bengaluru housing data
+- Built as part of hands-on learning in AI & Data Science
+
+# 👤 Author
+
+Tayyab Khan<br>
+BTech in AI & Data Science<br>
+Aspiring Data Scientist / ML Engineer
+
+📫 Feel free to connect or review the project!
 
 ### Deployment Notes
 - Model trained locally with CPU-safe XGBoost
