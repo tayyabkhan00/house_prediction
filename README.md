@@ -18,7 +18,51 @@ This project uses machine learning to estimate house prices in Bengaluru using h
 - CPU-safe XGBoost model
 - Cloud-ready Streamlit deployment
 
-Production-safe file handling
+# 🧠 Machine Learning Approach
+### 🔹 Dataset
+
+- Bengaluru house price dataset
+- Contains features like:
+  - Location
+  - Total square feet
+  - Bathrooms
+  - BHK
+  - Price (target)
+
+### 🔹 Feature Engineering
+
+- Removed irrelevant columns (society, availability, etc.)
+- Converted size → bhk
+- Converted total_sqft ranges to numeric values
+- Grouped rare locations into "other"
+- Applied one-hot encoding to location
+- Avoided data leakage by removing price_per_sqft
+
+### 🔹 Models Trained
+
+- Linear Regression (baseline)
+- XGBoost Regressor (final model)
+
+### 🔹 Final Model
+
+- Production-safe file handling
+- High R² score on test data
+- Serialized using pickle
+
+🖥️ Web App (Streamlit)
+
+# Users can:
+
+- Select a location
+- Enter total square feet
+- Choose number of bathrooms and BHK
+- Get an estimated house price instantly
+
+The app:
+- Loads a pre-trained model
+- Builds feature-aligned input dynamically
+- Runs inference safely on CPU-only cloud infrastructure
+
 ### Deployment Notes
 - Model trained locally with CPU-safe XGBoost
 - Deployed on Streamlit Cloud using feature-aligned inference
