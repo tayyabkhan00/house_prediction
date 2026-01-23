@@ -49,19 +49,19 @@ This project uses machine learning to estimate house prices in Bengaluru using h
 - High R² score on test data
 - Serialized using pickle
 
-🖥️ Web App (Streamlit)
+# 🖥️ Web App (Streamlit)
 
-# Users can:
-
+### Users can:
 - Select a location
 - Enter total square feet
 - Choose number of bathrooms and BHK
 - Get an estimated house price instantly
-
 The app:
 - Loads a pre-trained model
 - Builds feature-aligned input dynamically
 - Runs inference safely on CPU-only cloud infrastructure
+
+- 🗂️ Project Structure
 
 ### Deployment Notes
 - Model trained locally with CPU-safe XGBoost
