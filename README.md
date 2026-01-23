@@ -160,6 +160,10 @@ Output:
 - Dataset inspired by public Bengaluru housing data
 - Built as part of hands-on learning in AI & Data Science
 
+## Deployment Notes
+- Model trained locally with CPU-safe XGBoost
+- Deployed on Streamlit Cloud using feature-aligned inference
+
 # 👤 Author
 
 Tayyab Khan<br>
@@ -167,7 +171,3 @@ BTech in AI & Data Science<br>
 Aspiring Data Scientist / ML Engineer
 
 📫 Feel free to connect or review the project!
-
-### Deployment Notes
-- Model trained locally with CPU-safe XGBoost
-- Deployed on Streamlit Cloud using feature-aligned inference
