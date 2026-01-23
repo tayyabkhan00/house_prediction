@@ -56,7 +56,7 @@ This project uses machine learning to estimate house prices in Bengaluru using h
 - Enter total square feet
 - Choose number of bathrooms and BHK
 - Get an estimated house price instantly
-The app:
+### The app:
 - Loads a pre-trained model
 - Builds feature-aligned input dynamically
 - Runs inference safely on CPU-only cloud infrastructure
