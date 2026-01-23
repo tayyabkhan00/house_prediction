@@ -6,7 +6,7 @@ The model is trained locally and deployed using Streamlit Cloud for real-time pr
 # 🚀 Live Demo
 
 👉 Streamlit App:[🏠 house prediction](https://houseprediction-7zjvrmizmhwqcy9q6fhlvg.streamlit.app/)<br>
-👉 GitHub Repository: (https://github.com/tayyabkhan00/house_prediction/settings)
+👉 GitHub Repository: [github](https://github.com/tayyabkhan00/house_prediction/tree/main)
 
 # 📌 Project Overview
 
@@ -83,7 +83,7 @@ house_prediction/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/house_prediction.git
+git clone https://github.com/tayyabkhan00/house_prediction/tree/main
 cd house_prediction
 ```
 ### 2️⃣ Create a virtual environment (recommended)
@@ -120,11 +120,11 @@ streamlit run app.py
 
 # 🛡️ Deployment & Engineering Notes
 
-✅ Uses relative paths (__file__) for portability
-✅ Model trained with CPU-safe XGBoost
-✅ XGBoost version aligned across local & cloud
-✅ Feature names preserved using columns.json
-✅ Predictions done using pandas DataFrame (feature-safe)
+✅ Uses relative paths (__file__) for portability<br>
+✅ Model trained with CPU-safe XGBoost<br>
+✅ XGBoost version aligned across local & cloud<br>
+✅ Feature names preserved using columns.json<br>
+✅ Predictions done using pandas DataFrame (feature-safe)<br>
 ❌ No training happens on the cloud (best practice)
 
 # 📦 Tech Stack
@@ -138,10 +138,10 @@ streamlit run app.py
 
 # 📊 Sample Prediction
 
-Input:
-Location: Whitefield
-Total Sqft: 1200
-Bathrooms: 2
+Input:<br>
+Location: Whitefield<br>
+Total Sqft: 1200<br>
+Bathrooms: 2<br>
 BHK: 2
 
 Output:
