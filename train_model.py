@@ -76,8 +76,11 @@ xgb = XGBRegressor(
     n_estimators=300,
     learning_rate=0.05,
     max_depth=5,
-    random_state=42
+    random_state=42,
+    tree_method="hist",   # CPU-safe
+    predictor="cpu_predictor"
 )
+
 xgb.fit(X_train, y_train)
 print("XGBoost R2:", xgb.score(X_test, y_test))
 
