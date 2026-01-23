@@ -83,21 +83,17 @@ house_prediction/
 1️⃣ Clone the repository
 git clone https://github.com/your-username/house_prediction.git
 cd house_prediction
-
 2️⃣ Create a virtual environment (recommended)
 python -m venv venv
 source venv/bin/activate   # macOS/Linux
 venv\Scripts\activate      # Windows
-
 3️⃣ Install dependencies
 pip install -r requirements.txt
-
 4️⃣ Train the model (local only)
 python train_model.py
 This generates:
 - model/house_price_model.pkl
 - model/columns.json
-
 5️⃣ Run the Streamlit app
 streamlit run app.py
 
