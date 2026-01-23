@@ -5,8 +5,8 @@ The model is trained locally and deployed using Streamlit Cloud for real-time pr
 
 # 🚀 Live Demo
 
-👉 Streamlit App: (https://houseprediction-7zjvrmizmhwqcy9q6fhlvg.streamlit.app/)<br>
-👉 GitHub Repository: (this repo)
+👉 Streamlit App:[🏠 house prediction](https://houseprediction-7zjvrmizmhwqcy9q6fhlvg.streamlit.app/)<br>
+👉 GitHub Repository: (https://github.com/tayyabkhan00/house_prediction/settings)
 
 # 📌 Project Overview
 
