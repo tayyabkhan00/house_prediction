@@ -99,10 +99,11 @@ pip install -r requirements.txt
 ### 4️⃣ Train the model (local only)
 ```bash
 python train_model.py
+```
 This generates:
 - model/house_price_model.pkl
 - model/columns.json
-```
+
 ### 5️⃣ Run the Streamlit app
 ```bash
 streamlit run app.py
