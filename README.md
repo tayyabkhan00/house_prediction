@@ -61,7 +61,25 @@ This project uses machine learning to estimate house prices in Bengaluru using h
 - Builds feature-aligned input dynamically
 - Runs inference safely on CPU-only cloud infrastructure
 
-- 🗂️ Project Structure
+# 🗂️ Project Structure
+```
+house_prediction/
+│
+├── app.py                  # Streamlit application
+├── train_model.py          # Model training script (local only)
+│
+├── data/
+│   └── bengaluru_house_data.csv
+│
+├── model/
+│   ├── house_price_model.pkl
+│   └── columns.json
+│
+├── requirements.txt        # Dependencies
+├── runtime.txt             # Python version
+└── README.md
+```
+  
 
 ### Deployment Notes
 - Model trained locally with CPU-safe XGBoost
