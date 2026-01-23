@@ -80,22 +80,33 @@ house_prediction/
 └── README.md
 ```
 # ⚙️ How to Run Locally
-1️⃣ Clone the repository<br>
-git clone https://github.com/your-username/house_prediction.git<br>
-cd house_prediction<br>
-2️⃣ Create a virtual environment (recommended)<br>
-python -m venv venv<br>
-source venv/bin/activate   # macOS/Linux<br>
-venv\Scripts\activate      # Windows<br>
-3️⃣ Install dependencies<br>
-pip install -r requirements.txt<br>
-4️⃣ Train the model (local only)<br>
-python train_model.py<br>
-This generates:<br>
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/house_prediction.git
+cd house_prediction
+```
+### 2️⃣ Create a virtual environment (recommended)
+```bash
+python -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+```
+### 3️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4️⃣ Train the model (local only)
+```bash
+python train_model.py
+This generates:
 - model/house_price_model.pkl
-- model/columns.json<br>
-5️⃣ Run the Streamlit app<br>
+- model/columns.json
+```
+### 5️⃣ Run the Streamlit app
+```bash
 streamlit run app.py
+```
 
 # ☁️ Deployment (Streamlit Cloud)
 
