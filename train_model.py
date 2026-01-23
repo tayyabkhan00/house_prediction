@@ -45,7 +45,8 @@ def convert_sqft(x):
 df['total_sqft'] = df['total_sqft'].apply(convert_sqft)
 df.dropna(inplace=True)
 
-df['price_per_sqft'] = df['price'] * 100000 / df['total_sqft']
+if 'price_per_sqft' in df.columns:
+    df.drop('price_per_sqft', axis=1, inplace=True)
 
 location_stats = df['location'].value_counts()
 df['location'] = df['location'].apply(
